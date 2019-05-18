@@ -1,0 +1,61 @@
+npm install -g json-server
+
+Node.js
+ create folder backend
+    create file app.js
+
+Build models with sequilize
+    npm init *creates package.json
+    sudo npm install sequelize *adds to package.json
+
+    require in sequelize and create a connection
+
+connect to a database by importing sequelize
+    const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize({ **class
+    dialect: 'sqlite',
+    storage: './database.sqlite'
+});
+
+sequelize 
+    .authenticate()
+    .then(() => {
+        console.log('Connection has been established successfully.');
+    })
+    .catch(err => {
+        console.error('Unable to connect to the database:', err);
+    });
+
+    run node app.js
+    npm install sqlite3 *if necessary
+    rerun node app.js
+
+    Create models using method called defined in app.js
+    
+    run sudo npm install pryjs **to test the model
+        once installed require sequelize **an abstraction over SQL and a tool for persisting data in SQL database
+            const pry = require('pryjs')
+        *can use eval(pry.it) *binding pry
+
+        ***Stylist.findAll().then(console.log)
+
+        Create controllers with express
+            install express npm install express
+
+        install cors gem
+            require cors 
+                const app = express()//in app.js
+                const cors = require('cors')
+
+                add middleware with
+                    app.use(cors())
+
+        create a seed file
+
+        node seeds to run the file
+
+        Realtime Apps with Node
+
+
+
