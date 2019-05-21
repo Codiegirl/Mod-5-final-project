@@ -1,17 +1,16 @@
 const Stylist = require('./models/Stylist')
+const User = require('./models/User')
 const Sequelize = require('sequelize');
 //const faker = require('faker')
-Stylist.sync()
+//Stylist.sync()
 
 
 //Stylist.destroyAll()
 //const image = faker.image.fashion()
 //console.log(image)
 
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: './database.sqlite'
-});
+const sequelize = require('./models/sequelize')
+
 const  stylists = [
             {"photo": "https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/49074792_2138701262866339_7586070051954884608_o.jpg?_nc_cat=104&_nc_eui2=AeEJmDCkKjWukR2u5Rzj0WwU2ww1uyauF_C2CrJhH5gENWGlXkK6OBJa5vDwpm3vBKDAOHOZxwwNsL3dvkHWNk2fYar9ngh9jP68jeEJ2vyXEQ&_nc_oc=AQkUa_1QbTzvDGrb0ddFeg-fV5bzjVqMQpIAKc7-pNwERNNdiCOzM4F1SzwKK8Bpnxg&_nc_pt=1&_nc_ht=scontent-dfw5-1.xx&oh=f9defd4e783d81892efddbcbc2640ad8&oe=5D55DFB0",
             "name": "Jamie",
@@ -112,15 +111,41 @@ const  stylists = [
             "image1": "https://i.pinimg.com/564x/ae/f8/cc/aef8ccd1edc7aa3659a790a0815703a9.jpg",
             "image2": "https://i.pinimg.com/564x/84/4d/0b/844d0b93ab29d62aed894f22771ba7d4.jpg",
             "image3": "https://i.pinimg.com/564x/b2/8d/d8/b28dd83c8a75780753048f7f69ec3238.jpg"
-            },
-
+            }
     ]
 
+    let users = [
+        {"name": "Jackie",
+        "image": "https://i.pinimg.com/564x/ae/f8/cc/aef8ccd1edc7aa3659a790a0815703a9.jpg",
+        "username": "Jackie",
+        "password": "1234"
+
+        },
+        {"name": "Becky",
+        "image": "https://i.pinimg.com/564x/ae/f8/cc/aef8ccd1edc7aa3659a790a0815703a9.jpg",
+        "username": "Bgirl",
+        "password":"2345"
+        },
+
+       { "name": "Tom",
+        "image": "https://i.pinimg.com/564x/ae/f8/cc/aef8ccd1edc7aa3659a790a0815703a9.jpg",
+        "username": "TomTom",
+        "password": "3456"
+
+        }
+    ]
+
+    //when working correctly in postman, will show up immediatly //set fetch get the token/ save in local storage
     sequelize.drop()
         .then( () => {
             sequelize.sync()
                 .then( () => {
                     stylists.forEach( stylist => Stylist.create(stylist))
+                    users.forEach( userAttributes => {
+                        let user = User.build(userAttributes)
+                        user.password = userAttributes.password
+                        user.save()
+                    })
                 })
         })
     

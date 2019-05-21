@@ -1,6 +1,6 @@
 .headerText {
-  color: #F5A9BC;
-  font-size: 3px;
+  color: rgb(163, 6, 45);
+  font-size: 15px;
   margin: 0% 2% 0% 2%;
 }
 .profile-images {
@@ -10,6 +10,28 @@
   width: auto;
   height: auto;
   
+}
+
+.navbar-container {
+  background-color: rgba(234, 244, 245, 0.966);
+
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  
+}
+.stylist-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  grid-auto-rows: 25em;
+
 }
 
 

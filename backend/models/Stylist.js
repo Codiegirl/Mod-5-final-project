@@ -3,10 +3,7 @@ const { STRING, BOOLEAN } = Sequelize //define the static properties
                     //const STRING = sequelize.STRING
 
 
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: './database.sqlite'
-});
+const sequelize = require('./sequelize')
 
 const Stylist = sequelize.define('stylist', {
     photo: {

@@ -29,6 +29,7 @@ io.listen(8080)
 
 
 const express = require('express')
+const User = require('./models/User')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
@@ -38,6 +39,7 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 stylistController.http(app);
+userController.http(app);
 
 
 

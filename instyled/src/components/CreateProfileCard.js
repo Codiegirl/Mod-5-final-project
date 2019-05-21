@@ -4,7 +4,7 @@ import React from 'react'
 export default class CreateProfileCard extends React.Component {
     render(){
         return (
-            
+            <div className="stylist-list">
             <div>
                 
                 <img width="100" src={this.props.photo}/><br/>
@@ -16,7 +16,7 @@ export default class CreateProfileCard extends React.Component {
                 <img height="400" src={this.props.image2}/>
                 <img height="400" src={this.props.image3}/>
                 </div>
-
+                </div>
             </div>
         )
     }
