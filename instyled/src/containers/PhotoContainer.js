@@ -13,7 +13,7 @@ export default class PhotoContainer extends React.Component {
       }
     
       componentDidMount(){
-        io.emit('stylists.index', stylists => {
+        io.on('stylists.index', stylists => {
             this.setState({ stylists })
         })
         io.on('stylists.update', stylists => {//start listineing for when stylists are updated
@@ -44,6 +44,7 @@ export default class PhotoContainer extends React.Component {
 
     render(){
         return (
+          
             <div>
                 {/* <h1></h1> */}
                 {this.state.stylists.map( stylist => (

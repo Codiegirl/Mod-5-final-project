@@ -57,9 +57,9 @@ const  stylists = [
             "specialty": "New Orleans",
             "styling": false,
             "bio": "I'm a Personal Stylist and Shopper whose goal is to always make my clients look and feel impeccable in the looks I style for them.",
-            "image1": "https://i.pinimg.com/564x/ec/91/ec/ec91ec00e2a67930c9a7cc1ed92e99eb.jpg",
-            "image2": "https://i.pinimg.com/564x/91/f0/73/91f07307638a6337cead0f7f14fffd12.jpg",
-            "image3": "https://i.pinimg.com/564x/40/5a/93/405a9345a4211b739ae83f8c90b2bf4d.jpg"
+            "image1": "http://localhost:3000/public/evening.png",
+            "image2": "http://localhost:3000/public/daytime.png",
+            "image3": "/public/Screen Shot 2019-05-22 at 9.27.49 PM.png"
 
             },
 

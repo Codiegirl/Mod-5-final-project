@@ -14,7 +14,7 @@ export default class IntroPhotoCard extends React.Component {
          <img src={beauty} style={{width: 450, height: 500}}></img>
          <img src={yoshi} style={{width: 450, height: 500}}></img>
          <img src={man} style={{width: 450, height: 500}}></img>
-         <h1>Your Final Destination for Style</h1>
+         <h1 center>Your Final Destination for Style</h1>
       </div>
       );
    }
