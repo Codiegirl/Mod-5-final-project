@@ -1,11 +1,17 @@
 const Stylist = require("../models/Stylist");
+const Image = require("../models/Image")
 
 module.exports = {
     sockets: socket => {
         
             //console.log(socket)
             socket.on('stylists.index', respond => {//event type and a function
-                Stylist.findAll()//returns a promise
+                
+                Stylist.findAll({
+                    include: [{
+                        model: Image
+                    }]
+                })//returns a promise
                 .then( stylists => {//
                     respond(stylists)
                 })

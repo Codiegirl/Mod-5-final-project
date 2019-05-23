@@ -12,18 +12,6 @@ const Stylist = sequelize.define('stylist', {
     name: {
         type: STRING,
     },
-    image1: {
-        type: STRING
-    },
-    image1: {
-        type: STRING
-    },
-    image2: {
-        type: STRING
-    },
-    image3: {
-        type: STRING
-    },
     bio:{
         type: STRING
     },

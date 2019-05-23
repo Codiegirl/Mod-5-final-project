@@ -3,10 +3,69 @@
   font-size: 25px;
   margin: 0% 2% 0% 2%;
 }
-.headerText {
-  color: rgb(163, 6, 45);
-  font-size: 25px;
-  margin: 0% 2% 0% 2%;
+
+.body{
+  background:gray;
+}
+
+.rounded{
+  width:300px;
+  margin:auto;
+}
+
+.rounded img{
+  border-radius:50%;
+}
+
+.wrap{
+  width:1000px;
+  margin:auto;
+  margin-top:100px;
+}
+
+.card{
+  box-shadow:0 4px 8px 0 rgba(0,0,0,.6);
+  transition:0.4s;
+  width:300px;
+  background: #fff;
+  text-align: center;
+  font-size:16px;
+  font-family:sans-serif;
+  float:left;
+  margin:10px;
+}
+
+.card:hover{
+  box-shadow:0 8px 16px 0 rgba (0,0,0,0.6);
+}
+
+.container{
+  padding:2px 16px;
+}
+
+.flexbox-container{
+  display: flex;
+  
+}
+
+.flexbox-item{
+  width: 700px;
+  margin: 10px;
+  border: 3px solid #333;
+  background-color: #390;
+}
+
+.flexbox-item-1{
+  min-height:600px;
+  
+}
+.flexbox-item-2{
+  min-height:200px;
+  align-self: center;
+}
+
+.flexbox-item-3{
+  min-height:300px;
 }
 
 
@@ -22,7 +81,7 @@
 /* } */ 
 
 .navbar-container {
-  background-color: rgba(234, 244, 245, 0.966);
+  background-color: none;
 
 }
 
@@ -44,14 +103,15 @@
 
 }
 .app-name {
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Helvetica SC', cursive;
   color: rgb(12, 5, 7);
-  font-size: 50px;
+  font-size: 10px;
   margin: 0% 2% 0% 2%;
 
 }
 .navbar-links {
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Tinos', serif;
+  /* font-family: 'Amatic SC', cursive; */
   color: rgb(12, 5, 7);
   font-size: 25px;
   margin: 0% 2% 0% 2%;

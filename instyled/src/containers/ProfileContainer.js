@@ -27,7 +27,7 @@ export default class ProfileContainer extends React.Component {
       }
 
     render(){
-        console.log(this.state.stylists)
+        console.log(this.state)
         return (
             <div>
                 <h1>Meet the Stylists</h1>

@@ -1,5 +1,6 @@
 const Stylist = require('./models/Stylist')
 const User = require('./models/User')
+const Image = require('./models/Image')
 const Sequelize = require('sequelize');
 //const faker = require('faker')
 //Stylist.sync()
@@ -134,13 +135,21 @@ const  stylists = [
 
         }
     ]
-
     //when working correctly in postman, will show up immediatly //set fetch get the token/ save in local storage
     sequelize.drop()
         .then( () => {
             sequelize.sync()
                 .then( () => {
-                    stylists.forEach( stylist => Stylist.create(stylist))
+                    stylists.forEach( stylist => { 
+                        Stylist.create(stylist)
+                            .then(stylistInstance => {
+                        Image.create({image: stylist.image1, stylistId: stylistInstance.id})
+                        Image.create({image: stylist.image2, stylistId: stylistInstance.id})
+                        Image.create({image: stylist.image3, stylistId: stylistInstance.id})
+
+                        })
+                        
+                    })//create images here
                     users.forEach( userAttributes => {
                         let user = User.build(userAttributes)
                         user.password = userAttributes.password

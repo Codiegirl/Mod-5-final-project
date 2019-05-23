@@ -9,11 +9,12 @@ export default class PhotoContainer extends React.Component {
 
     state = {
         stylists: [],
-        users: []
+        users: [],
+        
       }
     
       componentDidMount(){
-        io.on('stylists.index', stylists => {
+        io.emit('stylists.index', stylists => {
             this.setState({ stylists })
         })
         io.on('stylists.update', stylists => {//start listineing for when stylists are updated
@@ -25,6 +26,7 @@ export default class PhotoContainer extends React.Component {
       saveStylist(stylist){
         io.emit('stylist.update', stylist)
       }
+
       checkAuth = () => {
         if(localStorage.getItem('token') !== null){
           fetch('http://localhost:3000/stylists', {
@@ -43,13 +45,18 @@ export default class PhotoContainer extends React.Component {
 
 
     render(){
+      console.log(this.state.stylists)
         return (
           
             <div>
                 {/* <h1></h1> */}
                 {this.state.stylists.map( stylist => (
-                <PhotoCard 
-                    {...stylist}/>
+                  stylist.images.map(image => (
+                    <PhotoCard
+                    image={image.image}/>
+                    
+                  ))
+                
             ))} 
             </div>
         )
