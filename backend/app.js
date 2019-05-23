@@ -2,16 +2,35 @@ const pry = require('pryjs')
 const userController = require('./controllers/users')
 const imageController = require('./controllers/images')
 const stylistController = require('./controllers/stylists')
-const io = require('socket.io')()//function that has to be invoked
+const jwt = require('jsonwebtoken')
+const socketIo = require('socket.io')//function that has to be invoked
 
+const io = socketIo(8080, {
+    handlePreflightRequest: function (req, res) {
+      var headers = {
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        'Access-Control-Allow-Origin': 'http://localhost:3001',
+        'Access-Control-Allow-Credentials': true
+      };
+      res.writeHead(200, headers);
+      res.end();
+    }
+  })
 
 
 io.on('connection', socket => { 
+    if(socket.handshake.headers.authorization){
+        let [ type, token ] = socket.handshake.headers.authorization.split(' ')
+        let result = jwt.decode(token)
+        if(result){
+            let userId = result.id
+            // Things only logged in users can do
+        }
+        
 
+    } 
     stylistController.sockets(socket);
-    //userController.sockets(socket);
     imageController.sockets(socket);
-
 
 })
         
@@ -21,7 +40,7 @@ io.on('connection', socket => {
 // })
 
 
-io.listen(8080)
+// io.listen(8080)
 
 
 

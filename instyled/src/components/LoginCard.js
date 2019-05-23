@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { authenticateSocket } from '../socket';
 
 
 export default class LoginCard extends React.Component {
@@ -27,8 +28,8 @@ export default class LoginCard extends React.Component {
        })
        .then(res=> res.json())
        .then(user => {
-          localStorage.setItem('token', user.auth_token)
-          this.props.checkAuth()
+          localStorage.setItem('token', user.token)
+          authenticateSocket()
         })
       }
     
@@ -52,7 +53,8 @@ export default class LoginCard extends React.Component {
                     <input onChange={this.handleChange} type="password" placeholder="Enter Password" name="password" required/>
                     <br/>
                     <br/>
-                    <button button className="tiny ui inverted red basic button" type="submit">Login</button>
+                    
+                    <Link to="/home-page"><button  type="submit">Login</button></Link>
                     <br/>
                     
                     <h4>No Account Yet?</h4>

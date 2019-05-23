@@ -1,6 +1,6 @@
 .headerText {
   color: rgb(163, 6, 45);
-  font-size: 15px;
+  font-size: 25px;
   margin: 0% 2% 0% 2%;
 }
 .profile-images {
@@ -9,6 +9,8 @@
   max-height:95px;
   width: auto;
   height: auto;
+  margin-top:40px;
+  /* margin-bottom:40px; */
   
 }
 
@@ -18,6 +20,7 @@
 }
 
 .navbar-links {
+  text-decoration: none;
   display: flex;
   list-style: none;
   justify-content: space-around;
@@ -33,6 +36,21 @@
   grid-auto-rows: 25em;
 
 }
+.app-name {
+  font-family: 'Amatic SC', cursive;
+  color: rgb(12, 5, 7);
+  font-size: 50px;
+  margin: 0% 2% 0% 2%;
+
+}
+.navbar-links {
+  font-family: 'Amatic SC', cursive;
+  color: rgb(12, 5, 7);
+  font-size: 25px;
+  margin: 0% 2% 0% 2%;
+
+}
+
 
 
 

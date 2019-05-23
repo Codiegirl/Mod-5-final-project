@@ -1,8 +1,7 @@
 import React from 'react'
 import PhotoCard from '../components/PhotoCard'
-import socketIO from 'socket.io-client'
+import { io } from '../socket'
 
-const io = socketIO('localhost:8080')//your ip address with the port number
 
 
 export default class PhotoContainer extends React.Component {
@@ -46,7 +45,7 @@ export default class PhotoContainer extends React.Component {
     render(){
         return (
             <div>
-                <h1>scroll</h1>
+                {/* <h1></h1> */}
                 {this.state.stylists.map( stylist => (
                 <PhotoCard 
                     {...stylist}/>

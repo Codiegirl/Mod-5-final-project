@@ -1,8 +1,9 @@
 import React from 'react'
 
 
-export default class CreateProfileCard extends React.Component {
+export default class Stylist extends React.Component {
     render(){
+        
         return (
             <div className="stylist-list">
             <div>
@@ -14,7 +15,9 @@ export default class CreateProfileCard extends React.Component {
                 <div className="profile-images" >
                 <img height="400" src={this.props.image1}/>
                 <img height="400" src={this.props.image2}/>
-                <img height="400" src={this.props.image3}/>
+                <img height="400" src={this.props.image3}/><br/>
+                <button>Book</button>
+                <button>Enter Chat Room</button>
                 </div>
                 </div>
             </div>
