@@ -13,18 +13,18 @@ const Sequelize = require('sequelize');
 const sequelize = require('./models/sequelize')
 
 const  stylists = [
-            {"photo": "https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/49074792_2138701262866339_7586070051954884608_o.jpg?_nc_cat=104&_nc_eui2=AeEJmDCkKjWukR2u5Rzj0WwU2ww1uyauF_C2CrJhH5gENWGlXkK6OBJa5vDwpm3vBKDAOHOZxwwNsL3dvkHWNk2fYar9ngh9jP68jeEJ2vyXEQ&_nc_oc=AQkUa_1QbTzvDGrb0ddFeg-fV5bzjVqMQpIAKc7-pNwERNNdiCOzM4F1SzwKK8Bpnxg&_nc_pt=1&_nc_ht=scontent-dfw5-1.xx&oh=f9defd4e783d81892efddbcbc2640ad8&oe=5D55DFB0",
-            "name": "Jamie",
+            {"photo": "https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/59908372_10213982621779604_4558565326039547904_n.jpg?_nc_cat=101&_nc_oc=AQlrACveHGLK3MxMM_sBhlh5M1ZKEtcorQZIoOUoyuJ94vxJJtLp-mCnWZwfRJ2lYKw&_nc_ht=scontent-dfw5-1.xx&oh=568f5a9b9ddf9780ca813a1dda8d2e2d&oe=5D542CCC",
+            "name": "Patricia Myles",
             "specialty": "Los Angeles",
             "styling": false,
-            "bio": "I want to play a fundamental part in the confidence that stems from wearing a perfecty tailored ensemble representative of one's authenticity and empowerment",
+            "bio": "I want to play a fundamental part in the confidence that stems from wearing accessories perfecty tailored ensemble representative of one's authenticity and empowerment",
             "image1": "https://n.nordstrommedia.com/id/sr3/bdcd23ea-e4a6-4d44-a308-a3022fc35e58.jpeg?trim=color&crop=pad&pad_color=fff&h=540&w=180&dpr=2&quality=60",
             "image2": "https://i.pinimg.com/564x/20/89/77/2089772bfe75abd5abd461b5e4060cfd.jpg",
             "image3": "https://i.pinimg.com/564x/81/83/85/8183852a62ebb5779d215a2d83ee6c08.jpg"
             },
 
-            { "photo": "https://hips.hearstapps.com/hbz.h-cdn.co/assets/16/49/1481049241-hbz-think-pink-00-index.jpg",
-              "name": "Monica",
+            { "photo": "https://www.moma.org/d/assets/W1siZiIsIjIwMTcvMDkvMTUvODN0bXlrZmJ1Zl9tb21hX2l0ZW1zX21vZ2lfMS5qcGciXSxbInAiLCJjb252ZXJ0IiwiLXJlc2l6ZSAxMDI0eDEwMjRcdTAwM2UiXV0/moma_items_mogi_1.jpg?sha=93fc7685a9fc5a27",
+              "name": "Monica Grant",
               "specialty": "New York",
               "styling": false,
               "bio": "Stylist as well as personal shopper that specializes in styling clients for all types of special events, or everyday wear. Street Style is my passion. I shop at Torrid mostly.",
@@ -33,8 +33,8 @@ const  stylists = [
               "image3": "https://i.pinimg.com/564x/86/e3/50/86e350696f016ba97d89fc1d5fc3b0e7.jpg"
             },
 
-            {"photo": "https://www.bravotv.com/sites/bravo/files/media_mpx/thumbnails/bravo-video.nbcuni.com/image/NBCU_Bravo/341/279/190424_3945133_Engineering_is_Fashion_on_Bravo_s_Project_Ru.jpg",
-            "name": "Avi",
+            {"photo": "https://images.asos-media.com/products/oasis-leather-biker-jacket/5617815-1-black?$XXL$&wid=513&fit=constrain",
+            "name": "Avi Davis",
             "specialty": "Houston",
             "styling": false,
             "bio": "I will work one-on-one with you and really get to know you and your personal style. I will offer looks for less that are actually stylish and wearable, as well as give you style tips to maximize all of the outfits that I provided!",
@@ -43,8 +43,8 @@ const  stylists = [
             "image3": "https://i.pinimg.com/564x/3c/fe/16/3cfe16907861427daf532e35638be1f8.jpg"
             },
 
-            {"photo": "http://www.inspirationde.com/wp-content/uploads/2015/01/fashion-photography-by-michael-tang-1420139426k84gn.jpg",
-            "name": "Rachel",
+            {"photo": "https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/59790407_2473728692650815_298467009794932736_n.jpg?_nc_cat=102&_nc_oc=AQkDucMfEvI1bWaOmrMz4AQ3f8povzdQpP18bQBeqchWKolrlXhPfaZRFnPlXvRj_jo&_nc_ht=scontent-dfw5-1.xx&oh=68525004d08a36dc861c7b8bb5c35a75&oe=5D528ACC",
+            "name": "Rochell Flood",
             "specialty": "Atlanta",
             "styling": false,
             "bio": "I'm a firm believer in looking your best no matter the occasion. Book me for sleek looks with an edge for any event you have planned.",
@@ -54,7 +54,7 @@ const  stylists = [
             },
 
             {"photo": "https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/36874230_10108068642238178_6367662064294428672_n.jpg?_nc_cat=104&_nc_oc=AQk0A1SxxIxDnpFjCk12KZJZ9zvWU17eohh6WaxG3GCmYqp3hMfrJrXmhh5bEKJtU64&_nc_ht=scontent-dfw5-1.xx&oh=09f67edad497ac86f3cfca72201c35fb&oe=5D524649",
-            "name": "Gova",
+            "name": "Carley A.",
             "specialty": "New Orleans",
             "styling": false,
             "bio": "I'm a Personal Stylist and Shopper whose goal is to always make my clients look and feel impeccable in the looks I style for them.",
@@ -65,7 +65,7 @@ const  stylists = [
             },
 
             {"photo": "https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/59498831_2223737501081237_6311999756289703936_n.jpg?_nc_cat=105&_nc_oc=AQmlyyylodKa_SeBU7KAJ2lZggQIM5y9NnJa22WhKGDrv-yR3tHkZ3umaZMtuso85eI&_nc_ht=scontent-dfw5-1.xx&oh=a6bb562f910060e59934cf51b1fdba1c&oe=5D59CB5E",
-            "name": "Mike",
+            "name": "Mike Avens",
             "specialty": "Menswear",
             "styling": false,
             "bio": "I can help you learn what to wear, how to wear it and where to buy it!",
@@ -75,7 +75,7 @@ const  stylists = [
             },
 
             {"photo": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/14022297_1259474257410496_1261379200846428355_n.jpg?_nc_cat=105&_nc_oc=AQmetsnxLj6WME-J0hZnqUdKVnpGwwPNwb5dYqt8cZeQBf0QCjhX-6u6zsUs6x2BfsA&_nc_ht=scontent-dfw5-2.xx&oh=1d18370840d27d784b04fdf056c1191c&oe=5D9BBD17",
-            "name": "Justin",
+            "name": "Justin Archield",
             "specialty": "All Occassion",
             "styling": false,
             "bio": "I believe in investing in a closet full of quality pieces that bring you joy every time you see them. Fashion is my air.",
@@ -85,7 +85,7 @@ const  stylists = [
             },
 
             {"photo": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/14359149_10154561279209451_350142609241958586_n.jpg?_nc_cat=106&_nc_oc=AQm-zACsDBGWgLG0KVxW6jOKItbh3P7TwZ5vckLJ0CrHQpyhUkyYkUjHZhnVqENvW80&_nc_ht=scontent-dfw5-2.xx&oh=29709b0208ec6ddc54873ac98cf4aac8&oe=5D52C09A",
-            "name": "Nikki",
+            "name": "Nikki Gaddis",
             "specialty": "Street Style",
             "styling": false,
             "bio": "Fashion is your instant language, it shows you that you can have anything you want in life, if you dress for it. I love style! Shopping is my passion.",
@@ -95,7 +95,7 @@ const  stylists = [
             },
 
             {"photo": "https://cdn.wearethought.com/media/wysiwyg/SS19/thought-clothing-menswear-organic-ethical-fashion-mens-shirts-fitzroy-stripe-natural-fabrics.jpg",
-            "name": "Marcus",
+            "name": "Marcus Jones",
             "specialty": "Menswear",
             "styling": false,
             "bio": "Personal style is your introduction to the world without having to speak - be BOLD! Wanna wear more colour? I'm the one for the job!",
@@ -105,7 +105,7 @@ const  stylists = [
             },
 
             {"photo": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/17952879_1847252171967655_6221547841662772864_n.jpg?_nc_cat=105&_nc_oc=AQkqvehS088AU8pIZldIfXByp0MoCbjHSMscrMMAgHMRKsKQtXpc_e4tmOikpbBY-pE&_nc_ht=scontent-dfw5-2.xx&oh=803a726540982d7ddd08e4cfb7a78cfb&oe=5D563995",
-            "name": "Misty",
+            "name": "Misty Archield",
             "specialty": "All Occasion",
             "styling": false,
             "bio": "I love being able to style my clients as sophisticated and on-point as possible while considering their preferences as well as trends. I don't watch the news, fashion is my news.",

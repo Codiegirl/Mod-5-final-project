@@ -3,6 +3,7 @@ import NavBar from './components/NavBar'
 import LoginCard from './components/LoginCard'
 import PhotoContainer from './containers/PhotoContainer'
 import ProfileContainer from './containers/ProfileContainer'
+import BookingCard from './components/BookingCard'
 import IntroPhotoCard from './components/IntroPhotoCard'
 import Stylist from './components/Stylist'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -26,6 +27,7 @@ class App extends React.Component{
           <Route exact path="/stylists/:id" component={Stylist}/>
           <Route path="/login" component={LoginCard}/>
           <Route path="/photos" component={PhotoContainer}/>
+          <Route path="/stylists/:id/booking" component={BookingCard}/>
         </Switch>
       </BrowserRouter>
     )

@@ -19,9 +19,9 @@ module.exports = {
             })
         
             socket.on('stylists.update', async params => {//patch request
-                let stylist = await Stylist.findByPK(params.id)
+                let stylist = await Stylist.findByPk(params.id)
                 await stylist.update(params)//wait for the dragon to be updated
-                let dragons = await Dragon.findAll()//get all the dragons whenever one changes
+                let stylists = await Stylist.findAll()//get all the dragons whenever one changes
                 io.emit('stylists.update', stylists) //broadcast that the stylist has changed and send them all back to the client
                 
             })
@@ -33,16 +33,16 @@ module.exports = {
                     res.json(stylist)
                 })
         })
-        //to show a dragon
+        //to show a stylist
         app.get('/stylists/:id', (req,res) => { //like event listener --run this code 
-            Stylist.findByPK(req.params.id)//returns a promise
+            Stylist.findByPk(req.params.id)//returns a promise
                 .then( stylists => {//call then on the promise to get back the stylista
                     res.json(stylists)
                 })
         })
         
         //to update a stylist
-        app.patch('/dragons/:id', async (req, res) => {
+        app.patch('/stylists/:id', async (req, res) => {
             
         })
     }

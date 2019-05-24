@@ -1,5 +1,5 @@
 import React from 'react'
-import Stylist from '../components/Stylist'
+import BookingCard from '../components/BookingCard'
 import { io } from '../socket'
 
 
@@ -10,16 +10,6 @@ export default class ProfileContainer extends React.Component {
         users: []
       }
       
-      clickStylist = (id) => {
-          console.log("hi")
-          this.setState({
-              stylists: this.state.stylists.map(stylist => {
-                  if(stylist.id === id)
-                  return{...stylist}
-                }
-            )
-          })
-        }
       
     
       componentDidMount(){
@@ -37,15 +27,14 @@ export default class ProfileContainer extends React.Component {
       }
 
     render(){
-        
+        console.log(this.state)
         return (
             <div>
                 
             {this.state.stylists.map(stylist => (
-                <Stylist
-                {...stylist}
-                clickStylist={this.clickStylist}/>
-                    
+                <BookingCard
+                {...stylist}/>
+            
             ))}
             </div>
         )
