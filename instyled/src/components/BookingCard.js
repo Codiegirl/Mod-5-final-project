@@ -26,8 +26,14 @@ export default class BookingCard extends React.Component{
     render(){
         
         return(
-            <div className="rounded">
-                <img className="rounded img" src={this.state.currentStylist.photo} width ="500px" height ="400px"/>
+            <div>
+                <div id= "showcase" className="rounded one" >
+                    <img className="rounded img" src={this.state.currentStylist.photo} width ="300px" height ="300px"/>
+                </div><br/><br/><br/><br/><br/><br/><br/><br/>
+                <div id="content" className="container">
+                    Living and loving at the same time
+                </div>
+                    <a href="#" className="btn">Read More</a>
             </div>
         )
     }

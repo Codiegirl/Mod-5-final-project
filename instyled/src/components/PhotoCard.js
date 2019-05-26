@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 export default class PhotoCard extends React.Component {
@@ -18,7 +19,9 @@ export default class PhotoCard extends React.Component {
                 <p> Argentina</p>
                 </div> 
                 <button>shop</button>
-                <button Link to>Meet the Stylist</button>
+                
+                <Link to= {`/stylists/${this.props.id}`}>
+                <button>Meet the Stylist</button></Link>
                 
                 {/* <img width="300" height="400" src={this.props.image2}/>
                 <img width="300" height="400" src={this.props.image3}/> */}

@@ -53,7 +53,8 @@ export default class PhotoContainer extends React.Component {
                 {this.state.stylists.map( stylist => (
                   stylist.images.map(image => (
                     <PhotoCard
-                    image={image.image}/>
+                    image={image.image}
+                    id={stylist.id}/>
                     
                   ))
                 

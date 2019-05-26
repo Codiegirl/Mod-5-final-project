@@ -27,7 +27,7 @@ module.exports = {
                     res.json(image)
                 })
         })
-        //to show a dragon
+        //to show a image
         app.get('/images/:id', (req,res) => { //like event listener --run this code 
             Image.findByPK(req.params.id)//returns a promise
                 .then( images => {//call then on the promise to get back the stylista
@@ -35,7 +35,7 @@ module.exports = {
                 })
         })
         
-        //to update a stylist
+        //to update an image
         app.patch('/images/:id', async (req, res) => {
             
         })

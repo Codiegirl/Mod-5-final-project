@@ -8,8 +8,8 @@ export default class NavBar extends React.Component{
             <div className="navbar-container">
                 
                 <div className="navbar-links">
-                    <Link to= "/photos"className="navbar-links"><li>looks</li></Link>
-                    <Link to= "/home-page"className="navbar-links"><h1>INSTYLED</h1></Link>
+                    <Link to= "/home-page"className="app-name"><h1>INSTYLED</h1></Link>
+                    <Link to= "/photos"className="navbar-links"><li>Looks</li></Link>
                     <Link to= "/stylists"className="navbar-links"><li>Stylists</li></Link>
                     <Link to= "/home-page"className="navbar-links"><li>Bookings</li></Link>
                     </div>

@@ -1,4 +1,6 @@
 const User = require("../models/User");
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 module.exports = {
     sockets: socket => {
@@ -45,9 +47,22 @@ module.exports = {
                 }
             })
             let user = users[0]
+            console.log(user)
             if(user.authenticate(req.body.password)) {
                 res.json(user)
             }
+        })
+        //new
+        app.post("/new", async (req, res) => {
+            console.log("hey dumbass")
+            bcrypt.hash(req.body.password, 10, (err,hash) =>{
+                User.create({
+                    username: req.body.username,
+                    password_digest: hash
+                })
+            })
+            console.log("we in this bitch")
+            res.json({user: user.token})
         })
         //edit
         app.get("/users/:id", (req, res) => {

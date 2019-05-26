@@ -8,15 +8,23 @@ import man from '../assets/images/man2 intro.jpg'
 export default class IntroPhotoCard extends React.Component {
     render(){
     return (
-      <div>
+       
+      <div className="main">
+      
+      <slider>
+         <slide>
          <img src={intro} style={{width: 450, height: 500}}></img>
          <img src={justin} style={{width: 450, height: 500}}></img>
          <img src={beauty} style={{width: 450, height: 500}}></img>
          <img src={yoshi} style={{width: 450, height: 500}}></img>
          <img src={man} style={{width: 450, height: 500}}></img>
          <h1 center>Your Final Destination for Style</h1>
+         </slide>
+         </slider>
       </div>
       );
    }
-}
+} 
   
+
+
