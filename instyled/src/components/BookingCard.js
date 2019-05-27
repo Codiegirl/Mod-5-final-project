@@ -1,5 +1,7 @@
 import React from 'react'
+import book from '../assets/images/bookcards.png'
 import { io } from '../socket'
+
 
 
 
@@ -26,12 +28,13 @@ export default class BookingCard extends React.Component{
     render(){
         
         return(
-            <div>
+            <div className="main">
                 <div id= "showcase" className="rounded one" >
                     <img className="rounded img" src={this.state.currentStylist.photo} width ="300px" height ="300px"/>
                 </div><br/><br/><br/><br/><br/><br/><br/><br/>
                 <div id="content" className="container">
-                    Living and loving at the same time
+                    
+                    <img center src={book} style={{width: 450, height: 500}}></img>
                 </div>
                     <a href="#" className="btn">Read More</a>
             </div>

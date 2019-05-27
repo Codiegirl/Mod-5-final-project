@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+
 const { STRING, BOOLEAN } = Sequelize //define the static properties
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
@@ -47,6 +48,9 @@ User.init({
         type: STRING
     }
 }, { sequelize, modelName: 'user' } )
+
+
+
     
     
 

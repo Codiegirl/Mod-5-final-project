@@ -29,14 +29,14 @@ export default class ProfileContainer extends React.Component {
     render(){
         console.log(this.state)
         return (
-            <div>
+            
                 
             {this.state.stylists.map(stylist => (
                 <BookingCard
                 {...stylist}/>
             
             ))}
-            </div>
+            
         )
              
         

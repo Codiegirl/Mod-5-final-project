@@ -6,13 +6,15 @@ module.exports = {
         
             //console.log(socket)
             socket.on('stylists.index', respond => {//event type and a function
-                
+                console.log('pkkutkjhgjhfghfncbvcbxvxvx')
+
                 Stylist.findAll({
                     include: [{
                         model: Image
                     }]
                 })//returns a promise
                 .then( stylists => {//
+                    console.log('pkkutkjhgjhfghfncbvcbxvxvx')
                     respond(stylists)
                 })
             

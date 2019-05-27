@@ -11,7 +11,7 @@ export default class ProfileContainer extends React.Component {
       }
       
       clickStylist = (id) => {
-          console.log("hi")
+          //console.log("hi")
           this.setState({
               stylists: this.state.stylists.map(stylist => {
                   if(stylist.id === id)

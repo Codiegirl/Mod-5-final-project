@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Route, Redirect } from 'react-router'
 import { authenticateSocket } from '../socket';
 
 
@@ -56,6 +57,7 @@ export default class LoginCard extends React.Component {
                     <br/>
                     
                     <button  type="submit">Login</button>
+                    
                     <br/>
                     
                     <h4>No Account Yet?</h4>

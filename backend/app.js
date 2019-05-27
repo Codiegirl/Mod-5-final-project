@@ -2,6 +2,7 @@ const pry = require('pryjs')
 const userController = require('./controllers/users')
 const imageController = require('./controllers/images')
 const stylistController = require('./controllers/stylists')
+const commentController = require('./controllers/comments')
 const jwt = require('jsonwebtoken')
 const socketIo = require('socket.io')//function that has to be invoked
 
@@ -31,6 +32,7 @@ io.on('connection', socket => {
     } 
     stylistController.sockets(socket);
     imageController.sockets(socket);
+    commentController.sockets(socket);
 
 })
         

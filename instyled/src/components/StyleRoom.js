@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 
-import { connect } from 'react-redux'//a function that creates anonther function to connect a component to a store
 
-const mapStateToProps = state => {
-    return {
-        health:  state.something//props to get data out of state and into a component
-                                //this is the state from index.js
+
+export default class StyleRoom extends React.Component {
+    state = {
+        
     }
-
-}
-
-const mapDispatchToProps = {
-//create the props that are functions
-}
-
-const myConnector = connect(mapStateToProps, mapDispatchToProps)
-
-class _StyleRoom extends Component {
     render() {
-        return (null)//pass props here)
+        return(
+            <div className="main">
+                <h1>Comments</h1>
+                <ul>
+                    <li>{this.props.message}</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+            </div>
+        )
     }
 }
 
-export const StyleRoom = myConnector(_StyleRoom)
