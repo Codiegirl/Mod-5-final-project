@@ -31,11 +31,10 @@ export default class ProfileContainer extends React.Component {
         return (
             
                 
-            {this.state.stylists.map(stylist => (
-                <BookingCard
-                {...stylist}/>
+            this.state.stylists.map(stylist => (
+                <BookingCard {...stylist}/>
             
-            ))}
+            ))
             
         )
              

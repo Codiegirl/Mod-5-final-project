@@ -27,6 +27,20 @@ module.exports = {
                     res.json(comment)
                 })
         })
+
+        app.post("/comments", async (req, res) => {
+            console.log("hey dumbass")
+            
+                Comment.create({//returns a promise
+                    message: req.body.message,
+                    imageId: req.body.image_id
+                })
+                .then(comment=> res.json(comment))//res sendes a response to the app.post
+            })
+            //console.log("we in this bitch")
+            // res.json({})
+        
+        
         //to show a image
         app.get('/comments/:id', (req,res) => { //like event listener --run this code 
             Comment.findByPK(req.params.id)//returns a promise

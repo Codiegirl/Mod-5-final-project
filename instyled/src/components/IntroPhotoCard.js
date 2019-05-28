@@ -30,7 +30,7 @@ export default class IntroPhotoCard extends React.Component {
     return (
        
        <div className="main">
-         <div id="intro-content" class="intro-container">
+         <div id="intro-content" className="intro-container">
 
             <img src={intro} style={{width: 450, height: 500}}></img>
             <img src={justin} style={{width: 450, height: 500}}></img>

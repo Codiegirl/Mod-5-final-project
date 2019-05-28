@@ -8,8 +8,11 @@
   margin: 0% 2% 0% 2%;
 }
 
-.body{
-  background:gray;
+body{
+  /* background-image: url("./assets/images/login.jpg");
+  background-repeat: no-repeat;
+  background-position: center; */
+  /* background:gray; */
 }
 
 .rounded one{
@@ -272,7 +275,6 @@ body{
 
 .intro-container{
   max-width: relative;
-  margin: auto;
   padding: 0 30px;
 }
 
@@ -288,15 +290,54 @@ body{
   100% {left: 0px}
 }
 
+.comment-wrap{
+  width:1000px;
+  margin:auto;
+  margin-top:100px;
+}
 .comment-box{
-align: justify;
-background-color:#02f3e5;
-border-radius: 4px;
-font-size: 16px;
-padding: 15px;
-margin: 5px;
+  border: 1px solid black;
+  box-shadow:0 4px 8px 0 rgba(0,0,0,.6);
+  transition:0.4s;
+  width:300px;
+  background: #fff;
+  text-align: center;
+  font-size:16px;
+  font-family:sans-serif;
+  float:left;
+  margin:10px;
 }
 
+.login-background{
+  background-image: url("./assets/images/login.jpg");
+}
+
+.login-body {
+  /* background-image: url("./assets/images/login.jpg");
+    background-repeat: no-repeat;
+    background-position: center; */
+    margin-top: 200px;
+    width: 400px;
+    height: 400px;
+    border: 2px dashed #333;
+  }
+
+  .boxed {
+    border: 1px solid green ;
+  }
+  .list{
+  list-style:none
+}
+
+/* .login-body{
+
+}
+.login-form-container{
+
+}
+.login-form {
+
+} */
 
 
 

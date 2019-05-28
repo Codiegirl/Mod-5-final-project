@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Route, Redirect } from 'react-router'
+import { Route, Redirect } from 'react-router';
 import { authenticateSocket } from '../socket';
+import '../App.css'
 
 
 export default class LoginCard extends React.Component {
@@ -43,9 +44,16 @@ export default class LoginCard extends React.Component {
       
     render(){
         return (
+          <div className="login-body">
+          
         <div className="login-form-container">
             <h1>Login</h1>
             <form onSubmit={this.handleLoginSubmit} className="login-form" >
+
+                    <label for="name"><b>Enter Name</b></label><br/>
+                    <input onChange={this.handleChange} type="text" placeholder="Enter Name" name="name" required/>
+                    <br/>
+                    <br/>
                 
                     <label for="username"><b>Username</b></label><br/>
                     <input onChange={this.handleChange} type="text" placeholder="Enter Username" name="username" required/>
@@ -66,6 +74,7 @@ export default class LoginCard extends React.Component {
                     </Link>
                 
         </form>
+        </div>
       </div>
         )
         

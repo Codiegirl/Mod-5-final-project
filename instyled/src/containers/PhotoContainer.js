@@ -1,6 +1,7 @@
 import React from 'react'
 import PhotoCard from '../components/PhotoCard'
 import { io } from '../socket'
+import {Grid, Segment, Popup} from 'semantic-ui-react'
 
 
 
@@ -15,7 +16,7 @@ export default class PhotoContainer extends React.Component {
       }
 
       clickImage = (id) => {
-        console.log('here', id)
+        // console.log('here', id)
         this.setState({
           image_id: id
         })
@@ -23,7 +24,7 @@ export default class PhotoContainer extends React.Component {
     
       componentDidMount(){
         io.emit('stylists.index', stylists => {
-          console.log('l', stylists)
+          // console.log('l', stylists)
             this.setState({ stylists })
         })
         io.on('stylists.update', stylists => {//start listineing for when stylists are updated
@@ -63,15 +64,48 @@ export default class PhotoContainer extends React.Component {
         }
       }
       
+      handleCreateComment = (e) =>{
+      console.log(e.target)
+        e.preventDefault()
+        let image_id = this.state.image_id
+       let message =  e.target.message.value
+
+      //  console.log("hey")
+       fetch('http://localhost:3000/comments',{
+            method: 'POST',//create
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              image_id: image_id,
+              message: message
+            })
+       })
+       .then(res=> res.json())
+       .then(comment => {
+         this.setState({
+           comments: [...this.state.comments, comment]
+         })
+      //   //console.log("hey123")
+          
+        })
+      }
+    
+      handleChange = (e) => {
+        this.setState({
+          [e.target.message]: e.target.value
+        
+        })
+      }
       
 
 
 
     render(){
       let selectedComments = this.state.comments.filter( comment => comment.imageId == this.state.image_id)
-      console.log(this.state.image_id, selectedComments)
+      //console.log(this.state.image_id, selectedComments)
       return (
-          
+          <div>
             <div>
                 {/* <h1></h1> */}
                 {this.state.stylists.map( stylist => (
@@ -85,26 +119,30 @@ export default class PhotoContainer extends React.Component {
                   ))
                 
             ))} 
+            <form onSubmit={this.handleCreateComment} className="comment-form" >
+                  <input onChange={this.handleChange} type="text" placeholder="Enter comment" name="message" required/>
+                  <button type="submit">comment</button>
+                  </form>
+            <div className="boxed">
             
-            <div className="comment-box">
               {selectedComments.map(comment => (
-                <ul>
-                  <li>{comment.message}</li>
-                </ul>
+                <div>
+                  <ul>
+                    <li className="list">{comment.message}</li>
+                  
+                  </ul>
+                  
+                </div>
               ))}
+              
+              </div>
+           
             </div>
-       
-
+            
             </div>
         )
+        
     }
 }
 
 
-/* <div>
-{selectedComments.map(comment => (
-  <ul>
-    <li>{comment.message}</li>
-  </ul>
-))}
-</div> */

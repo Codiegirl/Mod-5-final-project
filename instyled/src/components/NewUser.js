@@ -44,9 +44,15 @@ export default class NewUser extends React.Component {
     render(){
       
         return (
+          <div className="login-body">
         <div className="login-form-container">
             <h1>Create a Profile</h1>
             <form onSubmit={this.handleCreateSubmit} class="login-form">
+
+                    <label for="name"><b>Enter Name</b></label><br/>
+                    <input onChange={this.handleChange} type="text" placeholder="Enter Name" name="name" required/>
+                    <br/>
+                    <br/>
                
                     <label for="username"><b>Enter Username</b></label><br/>
                     <input onChange={this.handleChange} type="text" placeholder="Enter Username" name="username" required/>
@@ -63,6 +69,7 @@ export default class NewUser extends React.Component {
                     
                
         </form>
+        </div>
       </div>
         )
         

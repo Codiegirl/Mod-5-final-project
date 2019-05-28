@@ -54,7 +54,7 @@ module.exports = {
         })
         //new
         app.post("/new", async (req, res) => {
-            console.log("hey dumbass")
+            //console.log("hey dumbass")
             bcrypt.hash(req.body.password, 10, (err,hash) =>{
                 User.create({
                     username: req.body.username,
