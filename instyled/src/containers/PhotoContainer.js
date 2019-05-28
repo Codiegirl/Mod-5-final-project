@@ -32,11 +32,13 @@ export default class PhotoContainer extends React.Component {
         })
   
         io.emit('comments.index', comments => {
-          
             this.setState({ comments })
         })
-        io.on('comments.update', comments => {//start listineing for when stylists are updated
-            this.setState({ comments }) //put them in state, then on the backend 
+        io.on('comments.update', comment => {//start listineing for when stylists are updated
+          this.setState({
+            comments: [...this.state.comments, comment]
+          })
+          //console.log(e.payload)
         })
     
       } 
@@ -65,30 +67,30 @@ export default class PhotoContainer extends React.Component {
       }
       
       handleCreateComment = (e) =>{
-      console.log(e.target)
-        e.preventDefault()
-        let image_id = this.state.image_id
-       let message =  e.target.message.value
-
-      //  console.log("hey")
-       fetch('http://localhost:3000/comments',{
-            method: 'POST',//create
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              image_id: image_id,
-              message: message
-            })
-       })
-       .then(res=> res.json())
-       .then(comment => {
-         this.setState({
-           comments: [...this.state.comments, comment]
-         })
-      //   //console.log("hey123")
-          
+        console.log(e.target)
+          e.preventDefault()
+          let image_id = this.state.image_id
+        let message =  e.target.message.value
+          e.target.message.value = ''
+        //  console.log("hey")
+        fetch('http://localhost:3000/comments',{
+              method: 'POST',//create
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                image_id: image_id,
+                message: message
+              })
         })
+        .then(res=> res.json())
+        // .then(comment => {
+        //   this.setState({
+        //     comments: [...this.state.comments, comment]
+        //   })
+        //   //console.log("hey123")
+            
+        // })
       }
     
       handleChange = (e) => {
@@ -105,38 +107,38 @@ export default class PhotoContainer extends React.Component {
       let selectedComments = this.state.comments.filter( comment => comment.imageId == this.state.image_id)
       //console.log(this.state.image_id, selectedComments)
       return (
-          <div>
-            <div>
+          <div style={{ marginTop: '80px'}}>
+            <div style={{ width: '80%', float:'left'}}>
                 {/* <h1></h1> */}
-                {this.state.stylists.map( stylist => (
-                  stylist.images.map(image => (
-                    <PhotoCard
-                    image={image.image}
-                    id={stylist.id}
-                    id={image.id}
-                    clickImage={this.clickImage}/>
-                    
-                  ))
-                
-            ))} 
-            <form onSubmit={this.handleCreateComment} className="comment-form" >
+                <div>
+                  {this.state.stylists.map( stylist => (
+                    stylist.images.map(image => (
+                      <PhotoCard
+                      image={image.image}
+                      id={stylist.id}
+                      id={image.id}
+                      clickImage={this.clickImage}/>
+                      
+                    ))
+                  
+                  ))} 
+              </div>
+            </div>
+
+            <div style={{ width: '15%', float:'left'}}>
+              <form onSubmit={this.handleCreateComment} className="comment-form" >
                   <input onChange={this.handleChange} type="text" placeholder="Enter comment" name="message" required/>
                   <button type="submit">comment</button>
-                  </form>
-            <div className="boxed">
-            
-              {selectedComments.map(comment => (
-                <div>
-                  <ul>
-                    <li className="list">{comment.message}</li>
-                  
-                  </ul>
-                  
-                </div>
-              ))}
-              
+              </form>
+              <div className="boxed">
+                {selectedComments.map(comment => (
+                  <div>
+                    <ul>
+                      <li className="list">{comment.message}</li>
+                    </ul>
+                  </div>
+                ))}
               </div>
-           
             </div>
             
             </div>

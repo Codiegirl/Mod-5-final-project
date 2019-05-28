@@ -10,7 +10,7 @@ export default class PhotoCard extends React.Component {
  
         return (
                 
-                <div class ="wrap">
+                <div class ="">
                     <div class ="card"> 
                         <img src={this.props.image} style ={{"width": "100%"}}/>
                     

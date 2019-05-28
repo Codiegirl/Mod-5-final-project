@@ -44,6 +44,7 @@ export default class LoginCard extends React.Component {
       
     render(){
         return (
+          <div className="login-container">
           <div className="login-body">
           
         <div className="login-form-container">
@@ -63,8 +64,9 @@ export default class LoginCard extends React.Component {
                     <input onChange={this.handleChange} type="password" placeholder="Enter Password" name="password" required/>
                     <br/>
                     <br/>
-                    
+                    <Link to="/home-page">
                     <button  type="submit">Login</button>
+                    </Link>
                     
                     <br/>
                     
@@ -72,9 +74,11 @@ export default class LoginCard extends React.Component {
                     <Link to="/new">
                     <button button className="tiny ui inverted red basic button" type="submit">Create New Account</button>
                     </Link>
-                
+                    
         </form>
+        
         </div>
+      </div>
       </div>
         )
         

@@ -60,9 +60,9 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/public', express.static('public'))
-stylistController.http(app);
-userController.http(app);
-commentController.http(app);
+stylistController.http(app, io);
+userController.http(app, io);
+commentController.http(app, io);
 
 
 

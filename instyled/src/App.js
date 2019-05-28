@@ -15,6 +15,17 @@ import './App.css'
 
 
 
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={(props) => {
+    return localStorage.getItem('token') !== null
+      ? 
+        <div>
+          <NavBar/>
+          <Component {...props} />
+        </div>
+      : <Redirect to='/login' />
+  }} />
+)
 
 
 class App extends React.Component{
@@ -23,12 +34,11 @@ class App extends React.Component{
     return (
       //switch will render whichever route matches first
       <BrowserRouter>
-          <NavBar/>
         <Switch>
-          <Route path="/home-page" component={IntroPhotoCard}/>
-          <Route exact path="/stylists" component={ProfileContainer}/>
-          <Route exact path="/stylists/:id" component={SingleStylist}/>
-          <Route path="/photos" component={PhotoContainer}/>
+          <PrivateRoute path="/home-page" component={IntroPhotoCard}/>
+          <PrivateRoute exact path="/stylists" component={ProfileContainer}/>
+          <PrivateRoute exact path="/stylists/:id" component={SingleStylist}/>
+          <PrivateRoute path="/photos" component={PhotoContainer}/>
           <Route path="/login" component={LoginCard}/>
 
           {/* <Route exact path="/" render={() => (loggedIn ? (
@@ -37,7 +47,7 @@ class App extends React.Component{
               )
             )}/> */}
           <Route path="/chat/:id" component={StyleRoom}></Route>
-          <Route path="/stylists/:id/booking" component={BookingCard}/>
+          <PrivateRoute path="/stylists/:id/booking" component={BookingCard}/>
           <Route path="/new" component={NewUser}/>
         </Switch>
       </BrowserRouter>

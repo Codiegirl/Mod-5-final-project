@@ -3,7 +3,7 @@ import intro from '../assets/images/introgirl.jpg'
 import justin from '../assets/images/Justin intro.png'
 import beauty from '../assets/images/asianbeauty.jpg'
 import yoshi from '../assets/images/Yoshi.png'
-import man from '../assets/images/man2 intro.jpg'
+import man from '../assets/images/Manintro.jpg'
 import twoladies from '../assets/images/twoladies.png'
 
 

@@ -20,7 +20,7 @@ module.exports = {
                 
             })
     },
-    http: app => {
+    http: (app, io) => {
         app.get('/comments', (req,res) => { //like event listener --run this code 
             Comments.findAll()
                 .then( comment => {
@@ -35,8 +35,13 @@ module.exports = {
                     message: req.body.message,
                     imageId: req.body.image_id
                 })
-                .then(comment=> res.json(comment))//res sendes a response to the app.post
-            })
+                .then(comment=> {
+                    io.emit("comments.update", comment)
+                    res.json(comment)
+                })//res sendes a response to the app.post
+                
+        })
+
             //console.log("we in this bitch")
             // res.json({})
         
