@@ -5,13 +5,19 @@ import { withRouter } from 'react-router-dom';
 
 class Stylist extends React.Component {
 
-    // state = {
-    //     currentStylist: []
-    // }
+    state = {
+        currentStylist: [],
+        showBio: false
+    }
 
     // componentDidMount (){
         
     // }
+
+    toggleBio() {
+        console.log("bio");
+        this.showBio = !this.showBio;
+    }
 
     render(){
         console.log(this.props)
@@ -23,16 +29,19 @@ class Stylist extends React.Component {
                 <div className ="flexbox-container">
                     <div className="flexbox-item flexbox-item-1">
                     <div className="rounded">
-                    <img className="rounded img" src={this.props.photo}width ="500px" height ="400px"/>
+                    <img className="rounded img" src={this.props.photo}width ="500px" onClick={this.toggleBio} height ="400px"/>
                     </div>
                     </div>
                     <div className="flexbox-item flexbox-item-2">
+                    {/* {this.state.showBio ? ( */}
+                    {/* <div> */}
                     <h3 className="bio-name">{this.props.name}</h3>
                     <h2>{this.props.specialty}</h2><br></br><br/><br></br><br/>
-                    <h2>{this.props.bio}</h2>
+                    <h2>{this.props.bio}</h2><br/>
                     <Link to= {`/stylists/${this.props.id}/booking`}>
-                    <button onClick ={() => this.props.history.push(`/stylists/${this.props.id}/booking`)}>Book {this.props.name}</button></Link>
-                    <button>Enter Chat Room</button>
+                    <button className="book-button" onClick ={() => this.props.history.push(`/stylists/${this.props.id}/booking`)}>Book {this.props.name}</button></Link>
+                    {/* <button>Enter Chat Room</button> */}
+                    {/* </div>) :''} */}
                     </div>
                     {/* <div class="flexbox-item flexbox-item-3"></div> */}
                     <div className="axis main-axis"></div>
@@ -44,7 +53,7 @@ class Stylist extends React.Component {
 }
 
 export default withRouter(Stylist)
-                {/* <div>
+                /* <div>
                     <div className="stylist-list"></div>
                     <img src={this.props.photo}width ="300px" height ="300px"/>
                     </div>
@@ -62,4 +71,4 @@ export default withRouter(Stylist)
         </div>
         )
     }
-} */}
+} */

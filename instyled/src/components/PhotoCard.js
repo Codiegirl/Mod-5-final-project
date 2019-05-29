@@ -10,9 +10,10 @@ export default class PhotoCard extends React.Component {
  
         return (
                 
-                <div class ="">
+                <div class ="card-outer">
                     <div class ="card"> 
                         <img src={this.props.image} style ={{"width": "100%"}}/>
+                        
                     
                 {/* <div class ="container">
                     <button onClick={this.showComments}>Comments</button>
@@ -20,7 +21,7 @@ export default class PhotoCard extends React.Component {
                 <ul> 
                     <li>{this.props.comment1</li>
                     <li>{this.props.comment1</li>
-                    <li>{this.props.comment1</li>
+                    <li>{this.props.comment1</li
                     <li>Comment:</li>
                 <ul/> : null } */}
                 

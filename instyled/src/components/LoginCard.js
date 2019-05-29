@@ -51,7 +51,7 @@ export default class LoginCard extends React.Component {
             <h1>Login</h1>
             <form onSubmit={this.handleLoginSubmit} className="login-form" >
 
-                    <label for="name"><b>Enter Name</b></label><br/>
+                    <label for="name" ><b>Enter Name</b></label><br/>
                     <input onChange={this.handleChange} type="text" placeholder="Enter Name" name="name" required/>
                     <br/>
                     <br/>

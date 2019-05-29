@@ -105,10 +105,11 @@ export default class PhotoContainer extends React.Component {
 
     render(){
       let selectedComments = this.state.comments.filter( comment => comment.imageId == this.state.image_id)
+      console.log(this.state.stylists)
       //console.log(this.state.image_id, selectedComments)
       return (
           <div style={{ marginTop: '80px'}}>
-            <div style={{ width: '80%', float:'left'}}>
+            <div style={{ width: '80%', float:'left', columnCount: 3}}>
                 {/* <h1></h1> */}
                 <div>
                   {this.state.stylists.map( stylist => (
@@ -126,11 +127,9 @@ export default class PhotoContainer extends React.Component {
             </div>
 
             <div style={{ width: '15%', float:'left'}}>
-              <form onSubmit={this.handleCreateComment} className="comment-form" >
-                  <input onChange={this.handleChange} type="text" placeholder="Enter comment" name="message" required/>
-                  <button type="submit">comment</button>
-              </form>
+              
               <div className="boxed">
+                
                 {selectedComments.map(comment => (
                   <div>
                     <ul>
@@ -138,6 +137,10 @@ export default class PhotoContainer extends React.Component {
                     </ul>
                   </div>
                 ))}
+                <form onSubmit={this.handleCreateComment} className="comment-form" >
+                  <input onChange={this.handleChange} type="text" placeholder="Enter comment" name="message" required/>
+                  <button type="submit">comment</button>
+                </form>
               </div>
             </div>
             

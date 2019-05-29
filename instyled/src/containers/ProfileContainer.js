@@ -41,8 +41,8 @@ export default class ProfileContainer extends React.Component {
         return (
             <div>
                 
-            {this.state.stylists.map(stylist => (
-                <Stylist
+            {this.state.stylists.map((stylist,k) => (
+                <Stylist key={k}
                 {...stylist}
                 clickStylist={this.clickStylist}/>
                     
