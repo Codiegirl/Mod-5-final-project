@@ -31,12 +31,14 @@ export default class BookingCard extends React.Component{
         
         return(
             <div className="main">
-                <div id= "showcase" className="rounded one" >
+                
+                <div id= "showcase" className="rounded one" style={{"text-align": "center"}} >
+                    <div className="book-name">Book with {this.state.currentStylist.name}</div>
                     <img className="rounded img" src={this.state.currentStylist.photo} width ="300px" height ="300px"/>
-                </div><br/><br/><br/><br/><br/><br/><br/><br/>
-                <div id="content" className="container">
+                </div>
+                <div id="content" className="container" style={{"margin-top": "200px"}}>
                     
-                    <img center src={book} style={{width: 450, height: 500}}></img>
+                    <img center src={book} style={{width: 500, height: 500}}></img>
                     <div className="flexbox-item-stylist-3">
                         
                     </div>

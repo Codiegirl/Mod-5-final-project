@@ -16,7 +16,7 @@ export default class NavBar extends React.Component{
                     <Link to= "/photos"className="navbar-links"><li>Looks</li></Link>
                     <Link to= "/stylists"className="navbar-links"><li>Stylists</li></Link>
                     <Link to= "/home-page"className="navbar-links"><li>Bookings</li></Link>
-                    <Link to= "/login" onClick={this.handleLogout}><li className="navbar-links" style={{decoration: 'none'}}>Logout</li></Link>
+                    <Link to= "/login" style={{"text-decoration": 'none'}} onClick={this.handleLogout}><li className="navbar-links" >Logout</li></Link>
                     </div>
                     
             </div>

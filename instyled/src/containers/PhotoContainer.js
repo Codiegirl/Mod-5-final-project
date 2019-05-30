@@ -109,7 +109,7 @@ export default class PhotoContainer extends React.Component {
       //console.log(this.state.image_id, selectedComments)
       return (
           <div style={{ marginTop: '80px'}}>
-            <div style={{width: '80%', float:'left', columnCount: 3}}>
+            <div style={{width: '80%', margin: "auto", columnCount: 3}}>
                 {/* <h1></h1> */}
                 <div>
                   {this.state.stylists.map( stylist => (

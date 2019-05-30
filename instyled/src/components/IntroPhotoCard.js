@@ -17,7 +17,7 @@ export default class IntroPhotoCard extends React.Component {
       <div className="slider">
                     <slide><p></p></slide>
                     <slide><p></p></slide>
-                    <slide><p>Be bold</p></slide>
+                    <slide><p style={{color: "rgb(237	242	223)"}}>Be bold</p></slide>
                     <slide><p></p></slide>
         </div> 
 

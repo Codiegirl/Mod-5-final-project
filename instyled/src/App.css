@@ -110,6 +110,14 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
+.book-name{
+  font-size:35px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 
+  
+}
+
+
 
 
  .profile-images {
@@ -312,7 +320,7 @@ body{
 
 @keyframes content{
   0% {left: -1000px}
-  100% {left: 250px}
+  100% {left: 220px}
 }
 
 .intro-container{
