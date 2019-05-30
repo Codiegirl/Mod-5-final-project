@@ -26,6 +26,7 @@ class Stylist extends React.Component {
         return (
             
             <div className="main">
+                
                 <div className ="flexbox-container">
                     <div className="flexbox-item flexbox-item-1">
                     <div className="rounded">

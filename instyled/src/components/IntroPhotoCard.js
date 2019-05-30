@@ -14,49 +14,61 @@ import bottom from '..//assets/images/bottomphoto.png'
 export default class IntroPhotoCard extends React.Component {
     render(){
     return (
+      <div className="slider">
+                    <slide><p></p></slide>
+                    <slide><p></p></slide>
+                    <slide><p>Be bold</p></slide>
+                    <slide><p></p></slide>
+        </div> 
+
+
+
+
+
+
       
-        <div className="main">
-          <div id="intro-content" className="intro-container">
+      //   <div className="main">
+      //     <div id="intro-content" className="intro-container">
 
-             <img src={intro} style={{width: 450, height: 500}}></img>
-             <img src={justin} style={{width: 450, height: 500}}></img>
-             <img src={beauty} style={{width: 450, height: 500}}></img>
-             <img src={yoshi} style={{width: 450, height: 500}}></img>
-             <img src={man} style={{width: 450, height: 500}}></img><br/><br/><br/><br/>
+      //        <img src={intro} style={{width: 450, height: 500}}></img>
+      //        <img src={justin} style={{width: 450, height: 500}}></img>
+      //        <img src={beauty} style={{width: 450, height: 500}}></img>
+      //        <img src={yoshi} style={{width: 450, height: 500}}></img>
+      //        <img src={man} style={{width: 450, height: 500}}></img><br/><br/><br/><br/>
             
-           </div> 
-           <h1 center>Your Final Destination for Style</h1><br/><br/><br/><br/>
-           <h1 center></h1>
-           <div className ="flexbox-container-1">
-                  <div className="flexbox-item-intro-1">
-                      <img src={doublegirl} style={{width: 450, height: 500}}></img>
-                  </div>
+      //      </div> 
+      //      <h1 center>Your Final Destination for Style</h1><br/><br/><br/><br/>
+      //      <h1 center></h1>
+      //      <div className ="flexbox-container-1">
+      //             <div className="flexbox-item-intro-1">
+      //                 <img src={doublegirl} style={{width: 450, height: 500}}></img>
+      //             </div>
 
-                  <div className="flexbox-item-intro-2">
-                      <img src={doublegirl} style={{width: 450, height: 500}}></img>
+      //             <div className="flexbox-item-intro-2">
+      //                 <img src={doublegirl} style={{width: 450, height: 500}}></img>
                       
-                      <h1><center>The Latest Styles To Celebrate!</center></h1>
-                  </div>
+      //                 <h1><center>The Latest Styles To Celebrate!</center></h1>
+      //             </div>
                   
-                  <div className="flexbox-item-intro-3">
-                    <img src={doublegirl} style={{width: 450, height: 500}}></img>
-                  </div>
+      //             <div className="flexbox-item-intro-3">
+      //               <img src={doublegirl} style={{width: 450, height: 500}}></img>
+      //             </div>
                     
-                </div>
+      //           </div>
 
-                <div>
-                <div className="flexbox-item-intro-1">
-                      <img src={pinkdress} style={{width: 450, height: 500}}></img>
-                  </div>
-                  <div className="flexbox-item-intro-3">
-                    <img src={greenskirt} style={{width: 450, height: 500}}></img>
-                  </div>
-                </div>
-                <div>
+      //           <div>
+      //           <div className="flexbox-item-intro-1">
+      //                 <img src={pinkdress} style={{width: 450, height: 500}}></img>
+      //             </div>
+      //             <div className="flexbox-item-intro-3">
+      //               <img src={greenskirt} style={{width: 450, height: 500}}></img>
+      //             </div>
+      //           </div>
+      //           <div>
                 
-                </div>
+      //           </div>
                   
-       </div>
+      //  </div>
 
 
        );

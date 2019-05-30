@@ -1,6 +1,8 @@
 import React from 'react'
-import book from '../assets/images/bookcards.png'
+import price from '../assets/images/packageprice.png'
+import book from '../assets/images/bookingprice.png'
 import { io } from '../socket'
+
 
 
 
@@ -35,8 +37,11 @@ export default class BookingCard extends React.Component{
                 <div id="content" className="container">
                     
                     <img center src={book} style={{width: 450, height: 500}}></img>
+                    <div className="flexbox-item-stylist-3">
+                        
+                    </div>
                 </div>
-                    <a href="#" className="btn">Read More</a>
+                    
             </div>
         )
     }

@@ -156,7 +156,7 @@ const  stylists = [
                 
             },
 
-            {"photo": "./backend/public/nikkiprofile.png",
+            {"photo": "http://localhost:3000/public/nikkiprofile.png",
             "name": "Nikki Gaddis",
             "specialty": "Houston",
             "styling": false,
@@ -184,7 +184,7 @@ const  stylists = [
 
             {"photo": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/17952879_1847252171967655_6221547841662772864_n.jpg?_nc_cat=105&_nc_oc=AQkqvehS088AU8pIZldIfXByp0MoCbjHSMscrMMAgHMRKsKQtXpc_e4tmOikpbBY-pE&_nc_ht=scontent-dfw5-2.xx&oh=803a726540982d7ddd08e4cfb7a78cfb&oe=5D563995",
             "name": "Misty Archield",
-            "specialty": "All Occasion",
+            "specialty": "Portland",
             "styling": false,
             "bio": "I love being able to style my clients as sophisticated and on-point as possible while considering their preferences as well as trends. I don't watch the news, fashion is my news.",
             "image1": "https://i.pinimg.com/564x/ae/f8/cc/aef8ccd1edc7aa3659a790a0815703a9.jpg",

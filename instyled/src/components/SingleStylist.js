@@ -1,6 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
+import greenskirt from '../assets/images/greenskirt.png'
+import pinkdress from '../assets/images/pinkdress.png'
+import man from '../assets/images/justin3.png'
+import look1 from '../assets/images/favoritelook1.png'
+import look2 from '../assets/images/favoritelook2.png'
+import look3 from '../assets/images/favoritelook3.png'
 
 
 class SingleStylist extends React.Component {
@@ -41,22 +47,55 @@ class SingleStylist extends React.Component {
                             <h2>{this.state.currentStylist.bio}</h2><br></br><br/><br></br>
                             <Link to= {`/stylists/${this.state.currentStylist.id}/booking`}>
                             <button className="book-button"onClick ={() => this.props.history.push(`/stylists/${this.state.currentStylist.id}`)}>Book {this.state.currentStylist.name}</button></Link>
+                        
                     </div>
-                    {/* <div class="flexbox-item flexbox-item-3"></div> */}
-                    {/* <div className="axis main-axis"></div>
-                    <div className="axis cross-axis"></div> */}
-                </div>
-                
-                {/* <div className ="flexbox-container-1">
-                    <div className="flexbox-item-intro-1">
-                        <img src={doublegirl} style={{width: 450, height: 500}}></img>
                     </div>
 
-                    <div className="flexbox-item-intro-2">
-                        <img src={doublegirl} style={{width: 450, height: 500}}></img>
-                    </div> */}
-              {/* </div> */}
-            </div>
+                    
+                        <br></br><br></br><br></br>
+                        <h1 className="singlestylist"> Favorite Looks</h1>
+                        <br></br><br></br><br></br>
+                        <div className ="flexbox-container-1">
+                   <div className="flexbox-item-intro-1">
+                       <img src={look1} style={{width: 450, height: 500}}></img>
+                   </div>
+
+                   <div className="flexbox-item-intro-2">
+                       <img src={look2} style={{width: 450, height: 500}}></img>
+                    </div>
+                       
+                   
+                  
+                   <div className="flexbox-item-intro-3">
+                     <img src={look3} style={{width: 450, height: 500}}></img>
+                   </div>
+                   </div>
+
+                   <div>
+                   <br></br><br></br><br></br><br></br>
+                   <h1 className="singlestylist"> Tips</h1>
+                 <div className="flexbox-item-stylist-1">
+                 <br></br><br></br><br></br><br></br><img src={pinkdress} style={{width: 450, height: 500}}></img>
+                       <img src={greenskirt} style={{width: 450, height: 500}}></img>
+                   </div></div>
+                   <div className="flexbox-item-stylist-3">
+                   <img src={man} style={{width: 450, height: 500}}></img>
+                   </div>
+
+                   </div>
+
+
+           
+                    
+                    
+                 
+                   
+                    
+                    
+      
+                    
+      
+                    
         )
     }
 }
