@@ -18,7 +18,7 @@ export default class PhotoContainer extends React.Component {
       clickImage = (id) => {
         // console.log('here', id)
         this.setState({
-          image_id: id
+          image_id: (id)
         })
       }
     
@@ -109,42 +109,26 @@ export default class PhotoContainer extends React.Component {
       //console.log(this.state.image_id, selectedComments)
       return (
           <div style={{ marginTop: '80px'}}>
-            <div style={{ width: '80%', float:'left', columnCount: 3}}>
+            <div style={{width: '80%', float:'left', columnCount: 3}}>
                 {/* <h1></h1> */}
                 <div>
                   {this.state.stylists.map( stylist => (
                     stylist.images.map(image => (
                       <PhotoCard
                       image={image.image}
-                      id={stylist.id}
+                      stylistID={stylist.id}
                       id={image.id}
-                      clickImage={this.clickImage}/>
-                      
+                      clickImage={this.clickImage}
+                      commentMode={this.state.image_id === image.id}
+                      selectedComments={selectedComments}
+                      handleCreateComment={this.handleCreateComment}
+                      handleChange={this.handleChange}/>
                     ))
                   
                   ))} 
               </div>
             </div>
-
-            <div style={{ width: '15%', float:'left'}}>
-              
-              <div className="boxed">
-                
-                {selectedComments.map(comment => (
-                  <div>
-                    <ul>
-                      <li className="list">{comment.message}</li>
-                    </ul>
-                  </div>
-                ))}
-                <form onSubmit={this.handleCreateComment} className="comment-form" >
-                  <input onChange={this.handleChange} type="text" placeholder="Enter comment" name="message" required/>
-                  <button type="submit">comment</button>
-                </form>
-              </div>
-            </div>
-            
-            </div>
+          </div>
         )
         
     }

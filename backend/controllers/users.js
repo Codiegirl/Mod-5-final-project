@@ -47,6 +47,7 @@ module.exports = {
                 }
             })
             let user = users[0]
+            console.log("????????????")
             console.log(user)
             if(user.authenticate(req.body.password)) {
                 res.json(user)

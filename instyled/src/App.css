@@ -48,6 +48,7 @@ body{
 
 .card{
 
+  position: relative;
   box-shadow:0 4px 8px 0 rgba(0,0,0,.6);
   transition:0.4s;
   width:95%;
@@ -108,7 +109,7 @@ body{
 
 
 
-/* .profile-images {
+ .profile-images {
   display: flex;
   max-width:230px;
   max-height:95px;
@@ -117,9 +118,9 @@ body{
   margin-top:40px;
   /* margin-bottom:40px; */
   
-/* } */ 
+ } 
 
- /* html, body {
+  /* html, body {
   width: 100%;
   height: 100%;
   padding: 0;
@@ -131,7 +132,7 @@ body{
   position: center
 }
 
-slider {
+.slider {
   display: block;
   width: 50%;
   height: 75%;
@@ -140,7 +141,7 @@ slider {
   position: absolute
 }
 
-slider > * {
+.slider > * {
   position: absolute;
   display: block;
   width: 100%;
@@ -153,14 +154,14 @@ slider > * {
 slide:nth-child(1){
   left: 0%;
   animation-delay: -1s;
-  background-image: url(assets/images/introgirl.jpg);
+  background-image: url(/assets/images/asianbeauty.jpg);
   background-size: 100;
   background-position: center
 }
 slide:nth-child(2){
   left: 100%;
   animation-delay: 2s;
-  background-image: url(assets/images/asianbeauty.jpg);
+  background-image: url(/assets/images/asianbeauty.jpg);
   background-size: cover;
   background-position: center
 } 
@@ -171,20 +172,20 @@ slide:nth-child(3){
   background-size: cover;
   background-position: center
 }
- slide:nth-child(4){
+slide:nth-child(4){
   left: 100%;
   animation-delay: 8s;
   background-image: url(/assets/images/Justinintro.jpg);
   background-size: cover;
   background-position: center
-}
+} 
 slide:nth-child(5){
   left: 100%;
   animation-delay: 11s;
-  background-image: url(assets/images/introgirl.jpg);
+  background-image: url(./assets/images/introgirl.jpg);
   background-size: cover;
   background-position: center
-}   
+}    
 
  @keyframes slide {
   0% { left: 100%; width: 100%;}
@@ -193,7 +194,7 @@ slide:nth-child(5){
   30% { left: -100%; width: 100%;}
   30.0001% { left: -100%; width: 0%;}
   100% { left: 100%; width: 0%; }
-}  */
+}   */
 
 .navbar-container {
   overflow: hidden;
@@ -211,6 +212,7 @@ slide:nth-child(5){
   list-style: none;
   justify-content: space-around;
   align-items: center;
+  color: rgb(12, 5, 7);
   min-height: 10vh;
   
 }
@@ -230,14 +232,16 @@ slide:nth-child(5){
   margin: 0% 2% 0% 2%;
 
 }
-.navbar-links {
+
+/* .navbar-links {
   font-family: 'Tinos', serif;
-  /* font-family: 'Amatic SC', cursive; */
+  
+  font-family: 'Amatic SC', cursive;
   color: rgb(12, 5, 7);
   font-size: 17px;
   margin: 0% 2% 0% 2%;
 
-}
+} */
 
 *{
   margin: 0;
@@ -369,15 +373,32 @@ body{
   cursor: pointer;
 }
 
-
-
-
 .book-button:hover {
   background-color:#F9BA32;
   color: white;
 }
 
- .login-body{
+.comment-button{
+  background-color: #2F3131; /* Green */
+  border: none;
+  color: white;
+  padding: 2px 20px;
+  text-align: center;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 11px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.comment-button:hover {
+  background-color:#F9BA32;
+  color: white;
+}
+
+.login-body{
 
 }
 /* .login-form-container{
@@ -386,7 +407,56 @@ body{
 .login-form {
 
 } */ 
+.flexbox-container-1{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
 
+.flexbox-item-intro {
+  width: 200px;
+  margin: 10px;
+  border: 3px solid black;
+  background-color: pink;
+}
+
+.flexbox-item-intro-1 {
+  min-height: 100px;
+
+}
+
+.flexbox-item-intro-2 {
+  min-height: 200px;
+
+}
+
+.flexbox-item-intro-3 {
+  min-height: 300px;
+
+}
+
+.flexbox-item-intro-4 {
+  min-height: 100px;
+
+}
+
+.flexbox-item-intro-5 {
+  min-height: 200px;
+
+}
+
+.flexbox-item-intro-6 {
+  min-height: 300px;
+
+}
+
+.bottom-container {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
 
 
 
