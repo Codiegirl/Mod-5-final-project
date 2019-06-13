@@ -1,5 +1,6 @@
-Fashion App
+
 README
+
 Instyled<br/>
 Fashion App
 Welome to Instyled! A place where you can look through a style feed and chat with others on different looks. Find a style you love and meet the stylist of that outfit. Book a session with the stylist to get started creating your new look! Please enjoy!
