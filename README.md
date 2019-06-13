@@ -1,2 +1,2 @@
-# Mod-5-final-project
+Instyled
 Fashion App
