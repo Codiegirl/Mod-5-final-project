@@ -20,7 +20,7 @@ Fork and clone this repository to your local machine. Before you run the applica
 
 Running the application
 
-I've set up the migrations in the db/migrate directory to create the user, stylist, comment, and image. In seeds.js I've also set up some data in this file for you to play around with.
+I've set up the migrations using sequelize.sync and to create the user, stylist, comment, and image in the seeds.js file in the backend folder. In seeds.js I've also set up some data in this file for you to play around with.
 
 Contributor's Guide
 
